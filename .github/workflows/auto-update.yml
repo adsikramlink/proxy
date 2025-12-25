@@ -1,0 +1,43 @@
+name: Auto Update Proxy
+
+on:
+  # Opsi 1: Jalan otomatis setiap 1 jam
+  schedule:
+    - cron: '0 * * * *' 
+  
+  # Opsi 2: Jalan kalau kamu klik tombol manual (buat testing)
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    # IZIN WAJIB: Supaya bot boleh nulis/save file ke repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Ambil kode dari Repo (Checkout)
+        uses: actions/checkout@v3
+
+      - name: Siapkan Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Library (Requests)
+        run: |
+          pip install -r requirements.txt
+
+      - name: Jalankan Script Utama
+        run: python main.py
+
+      - name: Simpan & Upload Hasil (Commit Push)
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          # Kita add file JSON hasil generate tadi
+          git add proxy.json
+          # Commit pesan, kalau tidak ada perubahan file, script gak bakal error
+          git commit -m "Auto-update proxy list [skip ci]" || echo "Tidak ada perubahan proxy baru"
+          git push
