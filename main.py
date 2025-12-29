@@ -1,49 +1,40 @@
 import requests
 import json
 import datetime
-import random
-import re
 
-# URL Sumber Proxy (Contoh pakai Proxyscrape yang free)
-URL_SUMBER = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all"
-
-def get_country_simulation(ip):
-    # Karena API GeoIP gratis biasanya berbayar/terbatas,
-    # Kita simulasi random negara dari list populer untuk demo.
-    # Kalau mau akurat, nanti integrasikan dengan library 'geoip2'
-    return random.choice(["US", "ID", "SG", "DE", "FR", "BR", "CN", "RU"])
+# Menggunakan API Geonode karena menyediakan metadata lengkap (Country, Port, Protocol)
+# Limit 500 proxy, diurutkan berdasarkan waktu pengecekan terakhir (terbaru)
+API_URL = "https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc"
 
 def update_proxy():
-    print("⏳ Sedang mengambil proxy...")
+    print("⏳ Mengambil data proxy XIX dari Geonode...")
     
     try:
-        response = requests.get(URL_SUMBER, timeout=15)
-        if response.status_code != 200:
-            print("❌ Gagal mengambil data dari URL Sumber.")
-            return
-
-        lines = response.text.splitlines()
+        response = requests.get(API_URL, timeout=30)
+        response.raise_for_status() # Cek jika ada error koneksi
+        
+        data = response.json()
+        raw_list = data.get("data", [])
+        
         proxy_list = []
         
-        for line in lines:
-            # Pastikan formatnya IP:PORT
-            if ":" in line and not line.startswith("#"):
-                parts = line.strip().split(":")
-                if len(parts) >= 2:
-                    ip = parts[0]
-                    port = parts[1]
-                    
-                    # Buat data objek
-                    proxy_data = {
-                        "ip": ip,
-                        "port": port,
-                        "user": "-",        # Proxy public jarang ada user/pass
-                        "password": "-",
-                        "country": get_country_simulation(ip),
-                        "type": "HTTP",
-                        "status": "Active"
-                    }
-                    proxy_list.append(proxy_data)
+        for item in raw_list:
+            # Ambil data real dari API
+            ip = item.get("ip")
+            port = item.get("port")
+            country = item.get("country") # Kode negara asli (ID, US, SG, dll)
+            protocols = item.get("protocols", [])
+            protocol_str = protocols[0] if protocols else "http"
+            
+            # Format objek untuk JSON
+            proxy_data = {
+                "ip": ip,
+                "port": str(port),  # Konversi ke string agar konsisten
+                "country": country,
+                "protocol": protocol_str, # Menambahkan info protokol (HTTP/SOCKS)
+                "source": "XIX-Fetcher"
+            }
+            proxy_list.append(proxy_data)
 
         # Siapkan JSON Final
         final_data = {
@@ -56,7 +47,8 @@ def update_proxy():
         with open("proxy.json", "w") as f:
             json.dump(final_data, f, indent=2)
             
-        print(f"✅ Sukses! {len(proxy_list)} proxy tersimpan di proxy.json")
+        print(f"✅ Sukses! {len(proxy_list)} proxy tersimpan.")
+        print("   -> Data negara dan port sekarang REAL (Bukan simulasi).")
 
     except Exception as e:
         print(f"❌ Error script: {e}")
