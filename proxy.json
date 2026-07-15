@@ -1,24 +1,38 @@
 {
-  "last_updated": "2026-07-15 17:07:01 UTC",
+  "last_updated": "2026-07-15 18:57:05 UTC",
   "total": 500,
   "proxies": [
     {
+      "ip": "208.87.128.239",
+      "port": "9150",
+      "country": "US",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
       "ip": "206.123.156.228",
-      "port": "23490",
+      "port": "9783",
       "country": "GB",
       "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
     {
+      "ip": "213.148.6.12",
+      "port": "7777",
+      "country": "KZ",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
       "ip": "206.123.156.209",
-      "port": "9834",
+      "port": "9333",
       "country": "GB",
       "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
     {
       "ip": "206.123.156.202",
-      "port": "8089",
+      "port": "9146",
       "country": "GB",
       "protocol": "socks5",
       "source": "XIX-Fetcher"
@@ -427,13 +441,6 @@
       "port": "9091",
       "country": "DE",
       "protocol": "socks4",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "212.77.75.25",
-      "port": "3129",
-      "country": "IT",
-      "protocol": "http",
       "source": "XIX-Fetcher"
     },
     {
@@ -3493,13 +3500,6 @@
       "port": "1080",
       "country": "SG",
       "protocol": "socks5",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "49.144.28.11",
-      "port": "8081",
-      "country": "PH",
-      "protocol": "http",
       "source": "XIX-Fetcher"
     }
   ]
