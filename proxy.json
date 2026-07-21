@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-21 20:14:40 UTC",
+  "last_updated": "2026-07-21 21:56:43 UTC",
   "total": 500,
   "proxies": [
+    {
+      "ip": "191.252.111.160",
+      "port": "7000",
+      "country": "BR",
+      "protocol": "http",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "103.119.147.235",
+      "port": "8080",
+      "country": "ID",
+      "protocol": "http",
+      "source": "XIX-Fetcher"
+    },
     {
       "ip": "213.199.47.140",
       "port": "1080",
@@ -3486,20 +3500,6 @@
       "port": "445",
       "country": "AM",
       "protocol": "socks4",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "145.220.226.48",
-      "port": "8080",
-      "country": "NL",
-      "protocol": "http",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "43.160.230.218",
-      "port": "3128",
-      "country": "SG",
-      "protocol": "http",
       "source": "XIX-Fetcher"
     }
   ]
