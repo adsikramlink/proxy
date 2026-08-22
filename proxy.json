@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-22 11:12:55 UTC",
+  "last_updated": "2026-08-22 12:20:39 UTC",
   "total": 500,
   "proxies": [
     {
@@ -202,6 +202,13 @@
       "ip": "113.22.221.35",
       "port": "20000",
       "country": "VN",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "213.230.121.41",
+      "port": "1080",
+      "country": "UZ",
       "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
@@ -1004,6 +1011,13 @@
       "source": "XIX-Fetcher"
     },
     {
+      "ip": "84.254.198.175",
+      "port": "1080",
+      "country": "RU",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
       "ip": "157.66.16.38",
       "port": "8070",
       "country": "ID",
@@ -1029,6 +1043,13 @@
       "port": "7890",
       "country": "RU",
       "protocol": "socks4",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "195.133.26.196",
+      "port": "1080",
+      "country": "FR",
+      "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
     {
@@ -1473,6 +1494,13 @@
       "source": "XIX-Fetcher"
     },
     {
+      "ip": "212.33.248.45",
+      "port": "1080",
+      "country": "RU",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
       "ip": "175.100.35.103",
       "port": "8080",
       "country": "KH",
@@ -1568,6 +1596,13 @@
       "port": "8080",
       "country": "NG",
       "protocol": "http",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "81.168.119.85",
+      "port": "443",
+      "country": "GB",
+      "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
     {
@@ -2054,6 +2089,13 @@
       "source": "XIX-Fetcher"
     },
     {
+      "ip": "45.95.233.88",
+      "port": "1082",
+      "country": "FR",
+      "protocol": "socks4",
+      "source": "XIX-Fetcher"
+    },
+    {
       "ip": "91.107.178.197",
       "port": "1080",
       "country": "DE",
@@ -2134,6 +2176,13 @@
       "ip": "92.53.64.224",
       "port": "9050",
       "country": "RU",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "191.223.220.23",
+      "port": "1080",
+      "country": "JP",
       "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
@@ -2352,6 +2401,13 @@
       "port": "1080",
       "country": "ID",
       "protocol": "socks4",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "163.5.214.119",
+      "port": "9097",
+      "country": "FR",
+      "protocol": "socks5",
       "source": "XIX-Fetcher"
     },
     {
@@ -3391,6 +3447,20 @@
       "source": "XIX-Fetcher"
     },
     {
+      "ip": "193.233.218.213",
+      "port": "1080",
+      "country": "RU",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
+      "ip": "109.120.133.253",
+      "port": "9999",
+      "country": "SE",
+      "protocol": "socks5",
+      "source": "XIX-Fetcher"
+    },
+    {
       "ip": "103.1.50.165",
       "port": "3125",
       "country": "HK",
@@ -3430,76 +3500,6 @@
       "port": "8080",
       "country": "NL",
       "protocol": "https",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "47.237.132.36",
-      "port": "1011",
-      "country": "SG",
-      "protocol": "socks5",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "154.88.189.22",
-      "port": "5678",
-      "country": "DO",
-      "protocol": "socks4",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "213.6.146.119",
-      "port": "8080",
-      "country": "PS",
-      "protocol": "http",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "145.220.226.2",
-      "port": "8080",
-      "country": "NL",
-      "protocol": "http",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "145.220.226.53",
-      "port": "8080",
-      "country": "NL",
-      "protocol": "http",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "185.128.104.152",
-      "port": "8443",
-      "country": "DE",
-      "protocol": "socks5",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "157.10.97.220",
-      "port": "3125",
-      "country": "ID",
-      "protocol": "http",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "123.253.137.172",
-      "port": "8082",
-      "country": "PH",
-      "protocol": "http",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "95.182.78.31",
-      "port": "5678",
-      "country": "UA",
-      "protocol": "socks4",
-      "source": "XIX-Fetcher"
-    },
-    {
-      "ip": "109.107.189.151",
-      "port": "1080",
-      "country": "RU",
-      "protocol": "socks5",
       "source": "XIX-Fetcher"
     }
   ]
